@@ -86,7 +86,7 @@ url = "https://raw.githubusercontent.com/MehmetArzu39/mehmetarzu/main/6%20class%
 # Excel dosyasını yükleyip okuma
 @st.cache
 def load_data(url):
-    return pd.read_excel(url)
+    return pd.read_csv(url)
 
 # Veriyi yükle
 df = load_data(url)
