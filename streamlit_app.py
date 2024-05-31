@@ -77,6 +77,25 @@ new_df = st.data_editor(
 st.write("You will notice that we changed our dataframe and added new data. "
          "Now it is time to visualize what we have annotated!")
 
+import streamlit as st
+import pandas as pd
+
+# GitHub'daki Excel dosyasının URL'si
+url = "https://raw.githubusercontent.com/MehmetArzu39/mehmetarzu/main/6%20class%20csv.csv"
+
+# Excel dosyasını yükleyip okuma
+@st.cache
+def load_data(url):
+    return pd.read_excel(url)
+
+# Veriyi yükle
+df = load_data(url)
+
+# Streamlit ile veriyi görüntüleme
+st.write("Dosya Başarıyla Yüklendi!")
+st.write("Dosya İçeriği:")
+st.write(df)
+
 st.divider()
 
 st.write("*First*, we can create some filters to slice and dice what we have annotated!")
