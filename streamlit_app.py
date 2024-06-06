@@ -7,7 +7,7 @@ import streamlit as st
 import pandas as pd
 
 # GitHub'daki Excel dosyasının URL'si
-url = "https://raw.githubusercontent.com/MehmetArzu39/mehmetarzu/main/6%20class%20csv.csv"
+url = "https://github.com/MehmetArzu39/mehmetarzu/raw/main/.devcontainer/Vize.xlsx"
 
 # Excel dosyasını yükleyip okuma
 @st.cache
