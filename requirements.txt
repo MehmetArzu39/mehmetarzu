@@ -1,8 +1,6 @@
 streamlit==1.26.0
+pandas
 openpyxl
 simpletransformers
 torch
-dataset
-trasnformers
-
 
