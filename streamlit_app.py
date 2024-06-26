@@ -3,7 +3,7 @@ from simpletransformers.question_answering import QuestionAnsweringModel
 import os
 
 # Modeli yükle
-model_path = 'https://drive.google.com/drive/folders/1Z4w8S3iz6d1evNjC3Zh4SQJEZ85bMQTh?usp=sharing'
+model_path = 'https://drive.google.com/drive/folders/1lpQOhb9hUccJzeSJN8MQ5EWx_4V6cOLj?usp=sharing'
 
 if not os.path.exists(model_path):
     st.error("Model path does not exist. Please check the path and try again.")
