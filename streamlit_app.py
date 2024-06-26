@@ -3,7 +3,7 @@ from simpletransformers.question_answering import QuestionAnsweringModel
 import os
 
 # Modeli yükle
-model_path = 'drive/MyDrive/Turkish_QA/Outputs/BertCased(9)'
+model_path = 'drive/MyDrive/Turkish_QA/Outputs/BertCased(10)'
 model = QuestionAnsweringModel('bert', model_path)
 
 # Soru cevaplama işlevi
