@@ -1,8 +1,6 @@
-import openpyxl
-
-
 import streamlit as st
 from simpletransformers.question_answering import QuestionAnsweringModel
+import os
 
 # Modeli yükle
 model_path = 'drive/MyDrive/Turkish_QA/Outputs/BertCased(9)'
@@ -29,4 +27,3 @@ question = st.text_input('Soru', 'Buraya soru girin...')
 if st.button('Cevapla'):
     answer = answer_question(context, question)
     st.write('Cevap:', answer)
-
