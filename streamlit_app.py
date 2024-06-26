@@ -3,7 +3,7 @@
 import streamlit as st 
 import pandas as pd
 import openpyxl
-
+import drive
 
 
 import streamlit as st
@@ -11,8 +11,7 @@ import pandas as pd
 
 import streamlit as st
 from simpletransformers.question_answering import QuestionAnsweringModel
-from google.colab import drive
-drive.mount('/content/drive')
+
 # Modeli yükle
 model_path = 'drive/MyDrive/Turkish_QA/Outputs/BertCased(9)'
 model = QuestionAnsweringModel('bert', model_path)
