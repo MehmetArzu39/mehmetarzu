@@ -9,21 +9,31 @@ import openpyxl
 import streamlit as st
 import pandas as pd
 
-# GitHub'daki Excel dosyasının URL'si
-url = "https://github.com/MehmetArzu39/mehmetarzu/raw/main/.devcontainer/Vize.xlsx"
 
-# Excel dosyasını yükleyip okuma
-@st.cache
-def load_data(url):
-    return pd.read_excel(url)
+# Modeli yükle
+model_path = 'drive/MyDrive/Turkish_QA/Outputs/BertCased(10)'
+model = QuestionAnsweringModel('bert', model_path)
 
-# Veriyi yükle
-df = load_data(url)
+# Soru cevaplama işlevi
+def answer_question(context, question):
+    answers, probabilities = model.predict([
+        {
+            'context': context,
+            'qas': [
+                {'question': question, 'id': '0'}
+            ]
+        }
+    ])
+    return answers[0]['answer']
 
-# Streamlit ile veriyi görüntüleme
-st.write("Dosya Başarıyla Yüklendi!")
-st.write("Dosya İçeriği:")
-st.write(df)
+# Streamlit uygulaması
+st.title('Simple Viewer - Soru Cevaplama')
 
+context = st.text_area('Bağlam (Context)', 'Buraya metin girin...')
+question = st.text_input('Soru', 'Buraya soru girin...')
+
+if st.button('Cevapla'):
+    answer = answer_question(context, question)
+    st.write('Cevap:', answer)
 
 
